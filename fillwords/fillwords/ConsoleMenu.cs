@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace fillwords
 {
-    class Program
+    class ConsoleMenu
     {
-        static string[] positions = { "Новая игра", "Продолжить игру", "Рейтинг", "Выход" };
-
-        static int x = 0;
-        static int y = 0;
-
-        static ConsoleKey pressed;
-
         static void PrintTitle()
         {
             Console.WriteLine(new String('\n', Console.WindowHeight / 10));
@@ -25,7 +19,7 @@ namespace fillwords
             Console.ForegroundColor = ConsoleColor.DarkGray;
         }
 
-        static void CheckPosition(ConsoleKey pressed)
+        static void CheckPosition(ConsoleKey pressed, int x)
         {
             if (x == 0 && pressed == ConsoleKey.Enter)
             {
@@ -54,10 +48,6 @@ namespace fillwords
         }
 
 
-        static void Main(string[] args)
-        {
-            
 
-        }
     }
 }
