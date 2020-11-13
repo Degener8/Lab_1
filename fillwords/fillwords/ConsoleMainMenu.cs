@@ -10,19 +10,33 @@ namespace fillwords
 
         static int flag = 0;
 
+        static void PrintTitle()
+        {
+            Console.WriteLine(new String('\n', Console.WindowHeight / 10));
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("______   _   _   _                                 _\n"
+            + "|  ___| (_) | | | |                               | | \n"
+            + "| |_     _  | | | | __      __   ___    _ __    __| |  ___ \n"
+            +"|  _|   | | | | | | \\ \\ /\\ / /  / _ \\  | '__|  / _` | / __| \n"
+            +"| |     | | | | | |  \\ V  V /  | (_) | | |    | (_| | \\__ \\ \n"
+            +"\\_|     |_| |_| |_|   \\_/\\_/    \\___/  |_|     \\__,_| |___/");
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+        }
 
         public static void PrintMenu()
         {
+            Console.BackgroundColor = ConsoleColor.Yellow;
             Console.Clear();
+            PrintTitle();
             Console.WriteLine(new String('\n', Console.WindowHeight / 8));
 
             for (int i = 0; i < positions.Length; i++)
             {
                 if (flag == i)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
                     Console.WriteLine($"{new String(' ', (Console.WindowWidth - positions[i].Length) / 2)}{ positions[i]} \n\n");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.ForegroundColor = ConsoleColor.DarkGray;
                 }
                 else Console.WriteLine($"{new String(' ', (Console.WindowWidth - positions[i].Length) / 2)}{ positions[i]} \n\n");
             }
